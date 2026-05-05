@@ -123,10 +123,6 @@ body,
 }
 
 .page-heading {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 1rem;
     padding: 1.25rem;
     margin: 0.6rem 0 1.25rem;
     background: #111111;
@@ -150,22 +146,6 @@ body,
     letter-spacing: 0;
 }
 
-.page-heading span {
-    max-width: 18rem;
-    color: #f2f2f2;
-    font-size: 0.92rem;
-    font-weight: 650;
-    text-align: right;
-}
-
-.metric-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 0.9rem;
-    margin-bottom: 1.3rem;
-}
-
-.metric-card,
 .report-card,
 .columns-box,
 .insight-list {
@@ -175,21 +155,6 @@ body,
     box-shadow: var(--shadow);
 }
 
-.metric-card {
-    position: relative;
-    padding: 1rem;
-    overflow: hidden;
-}
-
-.metric-card::before {
-    content: "";
-    position: absolute;
-    inset: 0 auto 0 0;
-    width: 5px;
-    background: #111111;
-}
-
-.metric-card span,
 .report-card span {
     display: block;
     margin-bottom: 0.35rem;
@@ -199,7 +164,6 @@ body,
     text-transform: uppercase;
 }
 
-.metric-card strong,
 .report-card strong {
     color: var(--text);
     font-size: 1.65rem;
@@ -268,6 +232,26 @@ body,
     padding: 0.15rem;
 }
 
+[data-testid="stMetric"] {
+    min-height: 6.1rem;
+    padding: 1rem;
+    margin-bottom: 1.3rem;
+    background: #ffffff;
+    border: 1px solid #111111;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+[data-testid="stMetricLabel"] {
+    color: var(--muted);
+    font-weight: 750;
+}
+
+[data-testid="stMetricValue"] {
+    color: #111111;
+    font-weight: 800;
+}
+
 .stButton > button,
 .stDownloadButton > button,
 [data-testid="stFileUploader"] section {
@@ -297,15 +281,6 @@ body,
 
     .nav-links {
         justify-content: flex-start;
-    }
-
-    .page-heading {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-
-    .page-heading span {
-        text-align: left;
     }
 
     .metric-grid {

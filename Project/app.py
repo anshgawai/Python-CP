@@ -23,7 +23,7 @@ PAGES = [
 
 
 st.set_page_config(
-    page_title="AI Data Analyzer",
+    page_title="Data Visualizer",
     layout="wide",
     initial_sidebar_state="collapsed",
 )
@@ -116,7 +116,6 @@ def render_navbar(active_page: str) -> None:
     html = load_text("navbar.html")
     html = html.replace("{{NAV_LINKS}}", "\n".join(links))
     html = html.replace("{{ACTIVE_PAGE}}", active_page)
-    html = html.replace("{{APP_PORT}}", str(APP_PORT))
     st.markdown(html, unsafe_allow_html=True)
 
 
@@ -128,7 +127,7 @@ def page_title(title: str, subtitle: str) -> None:
                 <p>{subtitle}</p>
                 <h1>{title}</h1>
             </div>
-            <span>Professional analytics workspace</span>
+             <span>Professional analytics workspace</span>
         </section>
         """,
         unsafe_allow_html=True,
